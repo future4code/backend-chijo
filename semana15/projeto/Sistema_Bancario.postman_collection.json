@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "cf6c357a-64b6-4bbd-8217-2a7f1950c847",
+		"name": "Sistema_Bancario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Marina\",\n    \"cpf\": \"620.321.000-53\",\n    \"birthdate\": \"30/11/1999\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserByCpf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserBalance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf",
+						"balance"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferMoneyToUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Letícia Chijo\",\n    \"value\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf/transaction/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf",
+						"transaction",
+						"add"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payBill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"value\": 50,\n    \"date\": \"15/03/2021\",\n    \"description\": \"Farmácia\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf/transaction/sub",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf",
+						"transaction",
+						"sub"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateBalance",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf",
+						"balance"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transferToOtherUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"yourName\": \"Letícia Chijo\",\n    \"recipientName\": \"Marina\",\n    \"value\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/user/:cpf/transaction/:accountCpf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"user",
+						":cpf",
+						"transaction",
+						":accountCpf"
+					],
+					"variable": [
+						{
+							"key": "cpf",
+							"value": "393.050.620-32"
+						},
+						{
+							"key": "accountCpf",
+							"value": "620.321.000-53"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "aula40",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "search-country-by-name": "node ./src/searchCountryByName.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^14.14.28"
+  }
+}
