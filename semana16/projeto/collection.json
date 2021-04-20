@@ -1,0 +1,472 @@
+{
+	"info": {
+		"_postman_id": "53045fe8-5dde-4d79-8eee-aa529710a4f6",
+		"name": "Todo_List",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Letícia Chijo\",\n    \"nickname\": \"lchijo\",\n    \"email\": \"lchijo@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Letícia Alves Chijo\",\n    \"nickname\": \"lchijo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/user/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "71f7cdab-16db-4657-9a05-1dbb168b4cc6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/user/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0478ae56-e4b9-4af5-8400-dc4244e2fed1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/user/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "dca25930-96cf-4c16-ac5b-10754d3d4fcc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Gel All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/user?query=i",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "i"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task",
+			"item": [
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Comprar água no mercado online\",\n\t\"description\": \"Comprar várias garrafa de água\",\n\t\"limitDate\": \"04/10/2021\",\n\t\"creatorUserId\": \"dca25930-96cf-4c16-ac5b-10754d3d4fcc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/task",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "ace581e6-7606-42a1-81ef-bfe75109c2b4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Task Status",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_ids\": [\"76eb0ebe-1ea8-4375-8c6e-9b95f5a20111\", \"91596109-2d81-4f18-a88c-0e6e983f6cac\"],\n    \"status\": \"doing\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/task/status/edit",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								"status",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "76eb0ebe-1ea8-4375-8c6e-9b95f5a20111"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Delayed Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task/delayed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								"delayed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task By User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task?creatorUserId=dca25930-96cf-4c16-ac5b-10754d3d4fcc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "creatorUserId",
+									"value": "dca25930-96cf-4c16-ac5b-10754d3d4fcc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task By Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task?status=doing",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "doing"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Task",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task?query=água",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "água"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Attribute Responsible",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"task_id\": \"76eb0ebe-1ea8-4375-8c6e-9b95f5a20111\",\n    \"responsible_user_ids\": [\"71f7cdab-16db-4657-9a05-1dbb168b4cc6\", \"4fd3276c-f857-4afc-87b6-247923710b67\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3003/task/responsible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								"responsible"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Responsible User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task/:taskId/responsible/:responsibleUserId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								":taskId",
+								"responsible",
+								":responsibleUserId"
+							],
+							"variable": [
+								{
+									"key": "taskId",
+									"value": "76eb0ebe-1ea8-4375-8c6e-9b95f5a20111"
+								},
+								{
+									"key": "responsibleUserId",
+									"value": "4fd3276c-f857-4afc-87b6-247923710b67"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task Responsible Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3003/task/:id/responsible",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3003",
+							"path": [
+								"task",
+								":id",
+								"responsible"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "76eb0ebe-1ea8-4375-8c6e-9b95f5a20111"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
