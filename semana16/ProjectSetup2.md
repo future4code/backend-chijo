@@ -23,24 +23,25 @@
  6) Criar **gitignore**: `touch .gitignore` e adicionar node_modules e build
  7) Instalar **express** e tipos do express: `npm i express` e `npm i @types/express -D`
  8) Instalar **cors** e tipos do cors: `npm i cors` e `npm i @types/cors -D`
- 9) Instalar knex, mysql e dotenv: `npm i knex@0.21.15 mysql dotenv`
+ 9) Instalar **knex**, **mysql** e **dotenv**: `npm i knex@0.21.15 mysql dotenv`
  10) Instalar tipos knex: `npm i @types/knex -D`
+  `npm i express cors knex@0.21.15 mysql dotenv @types/express -D @types/cors -D @types/knex -D`
  11) Criar arquivo `index.ts` com o seguinte conteúdo
 
 ```
-import express from 'express'
+import express, { Express } from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import knex from 'knex'
 import { AddressInfo } from 'net'
 
-const app = express()
+const app: Express = express()
 
 app.use(express.json())
 app.use(cors())
 dotenv.config()
 
-const connection = knex({
+export const connection = knex({
     client: "mysql",
     connection: {
         host: process.env.DB_HOST,
